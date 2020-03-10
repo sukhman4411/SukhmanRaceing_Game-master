@@ -85,6 +85,7 @@
             this.cbPlayer.Name = "cbPlayer";
             this.cbPlayer.Size = new System.Drawing.Size(276, 106);
             this.cbPlayer.TabIndex = 2;
+            this.cbPlayer.SelectedIndexChanged += new System.EventHandler(this.cbPlayer_SelectedIndexChanged);
             // 
             // cbCar
             // 

@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SukhmanRaceing_Game;
 using System;
 using System.Collections.Generic;
@@ -14,7 +14,17 @@ namespace SukhmanRaceing_Game.Tests
         [TestMethod()]
         public void Form1Test()
         {
-            Form1 obj = new Form1();
+            Batter3 obj = new Batter3();
+            obj.getData(40);
+            Assert.IsTrue(true);
         }
+        [TestMethod()]
+        public void Better2Test()
+        {
+            Better1 obj = new Better1();
+            obj.getData(40);
+            Assert.IsTrue(true);
+        }
+
     }
 }

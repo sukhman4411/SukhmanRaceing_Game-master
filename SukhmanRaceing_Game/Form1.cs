@@ -96,42 +96,75 @@ namespace SukhmanRaceing_Game
         private void Form1_Load(object sender, EventArgs e)
         {
 
-        }
+        }  
 
-        private void btnSet_Click(object sender, EventArgs e)
+        private void btnSet_Click(object sender, EventArgs e) 
         {
             int count = -1;
-            for (int y = 0; y < cbPlayer.Items.Count; y++)
+            int nn = 0,nnn=0;
+
+            for (int x=0;x<cbPlayer.Items.Count;x++) {
+                if (cbPlayer.GetItemChecked(x)) {
+                    nn++;   
+                }
+            
+            }
+           // MessageBox.Show("Player 1---"+nn);
+            for (int x = 0; x < cbPlayer.Items.Count; x++)
             {
-                String[] details = cbPlayer.Items[y].ToString().Split(' ');
-                if (cbPlayer.GetItemChecked(y) && details.Length == 4)
+                if (cbCar.GetItemChecked(x))
                 {
-                    for (int z = 0; z < cbCar.Items.Count; z++)
-                    {
-                        if (cbCar.GetItemChecked(z))
-                        {
-                            count = z;
-                            break;
-                        }
-                    }
-                    if (count >= 0 && nm.Value > 0)
-                    {
-                        String f = cbPlayer.SelectedItem.ToString().Substring(0, cbPlayer.SelectedItem.ToString().IndexOf(' '));
-                        cbPlayer.Items[y] = f + " choose " + (cbCar.SelectedIndex + 1) + " Car with $ " + nm.Value;
-                        btnStart.Enabled = true;
-                    }
-                    else
-                    {
-                        MessageBox.Show("select the car and fill the amount for the bet ");
-                    }
+                    nnn++;
                 }
 
+            }
+
+
+            if (nn == 1 && nnn == 1)
+            {
+
+
+                for (int y = 0; y < cbPlayer.Items.Count; y++)
+                {
+                    String[] details = cbPlayer.Items[y].ToString().Split(' ');
+                    if (cbPlayer.GetItemChecked(y) && details.Length == 4)
+                    {
+                        for (int z = 0; z < cbCar.Items.Count; z++)
+                        {
+                            if (cbCar.GetItemChecked(z))
+                            {
+                                count = z;
+                                break;
+                            }
+
+                        }
+                        if (count >= 0 && nm.Value > 0)
+                        {
+                            String f = cbPlayer.SelectedItem.ToString().Substring(0, cbPlayer.SelectedItem.ToString().IndexOf(' '));
+                            cbPlayer.Items[y] = f + " choose " + (cbCar.SelectedIndex + 1) + " Car with $ " + nm.Value;
+                            btnStart.Enabled = true;
+                        }
+                        else
+                        {
+                            MessageBox.Show("select the car and fill the amount for the bet ");
+                        }
+                    }
+
+                }
+            }
+            else {
+                MessageBox.Show("select only one player and one car at a time ");
             }
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
             timer1.Start();
+        }
+
+        private void cbPlayer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

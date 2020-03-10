@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace SukhmanRaceing_Game
 {
     //abstarct class that is used to pass the better amount 
-    public abstract class Factory
+    public abstract class Better
     {
-        public abstract int Amt();
 
+        public abstract int Amt();
     }
 }

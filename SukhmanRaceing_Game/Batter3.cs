@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SukhmanRaceing_Game
 {
-    public class Batter3:Factory
+    public class Batter3:Better
     {
 
         public override int Amt()
@@ -17,7 +17,7 @@ namespace SukhmanRaceing_Game
 
         public int getData(int Amount)
         {
-            Factory obj;
+            Better obj;
             obj = new Better1();
             if (obj.Amt() >= Amount)
             {

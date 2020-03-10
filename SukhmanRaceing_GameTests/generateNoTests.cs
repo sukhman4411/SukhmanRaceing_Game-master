@@ -15,6 +15,16 @@ namespace SukhmanRaceing_Game.Tests
         public void generateRandomNoTest()
         {
             generateNo obj_gen = new generateNo();
+            int sth = obj_gen.generateRandomNo();
+            Assert.IsTrue(sth < 36);
+        }
+
+        [TestMethod()]
+        public void generateRandomNoTest2()
+        {
+            generateNo obj_gen = new generateNo();
+            int sth = obj_gen.generateRandomNo();
+            Assert.IsTrue(sth >= 0);
         }
     }
 }
